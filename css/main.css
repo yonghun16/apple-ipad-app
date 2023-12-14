@@ -66,6 +66,7 @@ header ul.menu > li > a:hover {
 /* Header / Menu / Basket */
 
 header .basket {
+  display: none;        /* 처음엔 안보이게 */
   width: 290px;
   padding: 10px 20px;
   border: 1px solid #D2D2d2;
@@ -75,6 +76,10 @@ header .basket {
   position: absolute;
   top: calc(100% + 4px);
   right: -6px;
+}
+
+header .basket.show {    /* 장바구니를 보여주기 위한 코드 */
+  display: block;
 }
 
 header .basket .arrow {  /* basket 상자의 화살표 박스*/
