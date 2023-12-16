@@ -66,7 +66,8 @@ header ul.menu > li > a:hover {
 /* Header / Menu / Basket */
 
 header .basket {
-  display: none;        /* 처음엔 안보이게 */
+  /* display: none;         처음엔 안보이게 (display:none를 쓰면 애니메이션 효과를 줄 수 없다.) */
+  visibility: hidden;       /* 화면에 안보이게끔 한다. */
   width: 290px;
   padding: 10px 20px;
   border: 1px solid #D2D2d2;
@@ -76,10 +77,13 @@ header .basket {
   position: absolute;
   top: calc(100% + 4px);
   right: -6px;
+  transition: .4s;
+  opacity: 0;
 }
 
 header .basket.show {    /* 장바구니를 보여주기 위한 코드 */
-  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 header .basket .arrow {  /* basket 상자의 화살표 박스*/
