@@ -31,18 +31,33 @@ basketEl.addEventListener('click', function(event) {
 
 /* 검색 */
 const headerEl = document.querySelector('header')
-const searchWrapEl = document.querySelector('.search-wrap')
-const searchStarterEl = document.querySelector('.search-starter')
-const searchCloserEl = document.querySelector('.search-closer')
-const searchShadowEl = document.querySelector('.shadow')
+const headerMenuEls = [...headerEl.querySelectorAll('ul.menu > li')]  // 얕은 복사(전개 연산자 사용)
+const searchWrapEl = headerEl.querySelector('.search-wrap')
+const searchStarterEl = headerEl.querySelector('.search-starter')
+const searchCloserEl = searchWrapEl.querySelector('.search-closer')
+const searchShadowEl = searchWrapEl.querySelector('.shadow')
+const searchDelayEls = [...searchWrapEl.querySelectorAll('li')]  // 배열로 복사
 
 function showSearching() {
   headerEl.classList.add('searching')
   document.documentElement.classList.add('fixed')
+  headerMenuEls.reverse().forEach(function (el, index) {
+    el.style.transitionDelay = index * .4 / headerMenuEls.length + 's'  // 요소마다 차등으로 delay를 변경하는 식
+  })
+  searchDelayEls.forEach(function (el, index) {
+    el.style.transitionDelay = index * .4 / searchDelayEls.length + 's'
+  })
 }
 function hideSearching() {
   headerEl.classList.remove('searching')
   document.documentElement.classList.remove('fixed')
+  headerMenuEls.reverse().forEach(function (el, index) {
+    el.style.transitionDelay = index * .4 / headerMenuEls.length + 's'  // 요소마다 차등으로 delay를 변경하는 식
+  })
+  searchDelayEls.reverse().forEach(function (el, index) {
+    el.style.transitionDelay = index * .4 / searchDelayEls.length + 's'
+  })
+  searchDelayEls.reverse()
 }
 
 searchStarterEl.addEventListener('click', showSearching)

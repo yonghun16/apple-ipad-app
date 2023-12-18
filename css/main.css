@@ -38,12 +38,13 @@ header ul.menu {
   justify-content: space-between;
 }
 
-header ul.menu>li {
+header ul.menu > li {
   display: flex;
   position: relative;
+  transition: 0.4s;
 }
 
-header ul.menu>li>a {
+header ul.menu > li > a {
   padding: 10px;
   font-size: 11px;
   display: flex;
@@ -159,13 +160,14 @@ header .basket ul li a:hover {
 }
 
 /* header / search */
-header .search-wrap {
-  /* 검색바를 배치하는 용도로 사용 */
+header .search-wrap {    /* 검색바를 배치하는 용도로 사용 */
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: .4s;
 }
 
 header .search {
@@ -258,10 +260,29 @@ header .search .autocompletes ul li a:hover {
   color: #0071E3;
 }
 
+header .search input,
+header .search .search-icon,
+header .search .autocompletes h3,
+header .search .autocompletes li {
+  transition: .6s;
+  transform: translate(100px, 0);
+}
+
 header.searching ul.menu>li {    /* 일치 선택자: header와 .searching 클래스가 동시 존재하면? */
-  display: none;
+  transform: scale(.7);
+  opacity: 0;
 }
 
 header.searching .search-wrap {  /* 일치 선택자 : header와 .searching클래스 가 동시에 존재하면?> */
-  display: block;
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+header.searching .search input,
+header.searching .search .search-icon,
+header.searching .search .autocompletes h3,
+header.searching .search .autocompletes li {
+  transition-delay: .2s;
+  transform: translate(0, 0);
 }
