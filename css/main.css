@@ -1,4 +1,11 @@
+html.fixed {
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
+}
+
 body {
+  height: 10000px;
   font-size: 16px;
   line-height: 1;
   font-family: "Roboto", "Noto Sans KR", sans-serif;
@@ -158,6 +165,7 @@ header .search-wrap {
   top: 0;
   left: 0;
   width: 100%;
+  display: none;
 }
 
 header .search {
@@ -250,6 +258,10 @@ header .search .autocompletes ul li a:hover {
   color: #0071E3;
 }
 
-header.searching ul.menu>li {
+header.searching ul.menu>li {    /* 일치 선택자: header와 .searching 클래스가 동시 존재하면? */
   display: none;
+}
+
+header.searching .search-wrap {  /* 일치 선택자 : header와 .searching클래스 가 동시에 존재하면?> */
+  display: block;
 }
