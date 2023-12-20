@@ -1,4 +1,4 @@
-/* 장바구니 */
+/*  장바구니  */
 const basketStarterEl = document.querySelector('header .basket-starter')
 const basketEl = basketStarterEl.querySelector('.basket')
 
@@ -29,7 +29,7 @@ basketEl.addEventListener('click', function(event) {
 })
 
 
-/* 검색 */
+/*  검색  */
 const headerEl = document.querySelector('header')
 const headerMenuEls = [...headerEl.querySelectorAll('ul.menu > li')]  // 얕은 복사(전개 연산자 사용)
 const searchWrapEl = headerEl.querySelector('.search-wrap')
@@ -68,3 +68,4 @@ function hideSearch() {
 searchStarterEl.addEventListener('click', showSearch)
 searchCloserEl.addEventListener('click', hideSearch)
 searchShadowEl.addEventListener('click', hideSearch)
+
