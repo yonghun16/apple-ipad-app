@@ -513,3 +513,24 @@ nav .menu li.active:hover a {
 .hero .links {
   margin-top: 30px;
 }
+
+
+/* Power */
+.power {
+  margin-top: 110px;
+}
+.power .mutiple-apps h1 {
+  width: 500px;
+  height: 280px;
+  background-image: url("../images/power_headline.png");
+  transform : translate();
+}
+
+.power .mutiple-apps .figures {
+
+}
+
+.power .mutiple-apps figcaption {
+
+}
+
