@@ -146,6 +146,13 @@ a.link::after {
 .info {
   max-width: 330px;
   margin-bottom: 24px;
+  transition: 1s;
+  transform: translate(0, 100px);
+  opacity: 0;
+}
+.info.show {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 .info .icon {
   width: 100px;
