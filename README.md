@@ -8,7 +8,7 @@
 		<a href="https://www.apple.com/ipad-10.2">원본 보러가기</a>( www.apple.com/ipad-10.2 )
 	</li>
 	<li>
-		<a href="https://yonghun16.github.io/apple_ipad_app/">Clone 보러가기</a>
+		<a href="https://yonghun16.github.io/apple-ipad-app/">Clone 보러가기</a>
 	</li>
 	<li>
 		Single-page
