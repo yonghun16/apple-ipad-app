@@ -1,7 +1,6 @@
 import ipads from "../data/ipads.js";
 import navigations from "../data/navigations.js";
 
-
 /*  장바구니  */
 const basketStarterEl = document.querySelector("header .basket-starter");
 const basketEl = basketStarterEl.querySelector(".basket");
@@ -31,7 +30,6 @@ basketStarterEl.addEventListener("click", function (event) {
 basketEl.addEventListener("click", function (event) {
   event.stopPropagation(); // '이벤트 버를링'이 basketEl가 최고단계
 });
-
 
 /*  검색  */
 const headerEl = document.querySelector("header");
@@ -85,7 +83,6 @@ function stopScroll() {
   document.documentElement.classList.add("fixed");
 }
 
-
 /* 헤더 메뉴 토글! */
 const menuStarterEl = document.querySelector("header .menu-starter");
 menuStarterEl.addEventListener("click", function () {
@@ -97,8 +94,7 @@ menuStarterEl.addEventListener("click", function () {
     headerEl.classList.add("menuing");
     stopScroll();
   }
-})
-
+});
 
 /* 헤더 검색 */
 const searchTextFieldEl = document.querySelector("header .textfield");
@@ -106,21 +102,19 @@ const searchCancelEl = document.querySelector("header .search-canceler");
 searchTextFieldEl.addEventListener("click", function () {
   headerEl.classList.add("searching--mobile");
   searchInputEl.focus();
-})
+});
 searchCancelEl.addEventListener("click", function () {
   headerEl.classList.remove("searching--mobile");
-})
-
+});
 
 /* 윈도우 크기 조절에 따른 헤더 검색 창 초기화 */
-window.addEventListener("resize", function() {
+window.addEventListener("resize", function () {
   if (window.innerWidth <= 740) {
     headerEl.classList.remove("searching");
   } else {
     headerEl.classList.remove("searching--mobile");
   }
 });
-
 
 /* menu-toggler 토글*/
 const navEl = document.querySelector("nav");
@@ -133,13 +127,13 @@ navMenuToggleEl.addEventListener("click", function () {
   } else {
     showNavMenu();
   }
-})
+});
 
 navEl.addEventListener("click", function (event) {
   event.stopPropagation();
-})
-navShadowEl.addEventListener("click", hideNavMenu)
-window.addEventListener("click", hideNavMenu)
+});
+navShadowEl.addEventListener("click", hideNavMenu);
+window.addEventListener("click", hideNavMenu);
 
 function showNavMenu() {
   navEl.classList.add("menuing");
@@ -147,7 +141,6 @@ function showNavMenu() {
 function hideNavMenu() {
   navEl.classList.remove("menuing");
 }
-
 
 /* 요소의 가시성 관찰 */
 const io = new IntersectionObserver(function (entries) {
@@ -162,7 +155,6 @@ const infoEls = document.querySelectorAll(".info");
 infoEls.forEach(function (el) {
   io.observe(el);
 });
-
 
 /* 비디오 재생! */
 const video = document.querySelector(".stage video");
@@ -180,7 +172,6 @@ pauseBtn.addEventListener("click", function () {
   pauseBtn.classList.add("hide");
   playBtn.classList.remove("hide");
 });
-
 
 /* 당신에게 맞는 iPad는? 렌더링 */
 const itemsEl = document.querySelector("section.compare .items");
@@ -209,22 +200,23 @@ ipads.forEach(function (ipad) {
   itemsEl.append(itemEl);
 });
 
-
-/* 네비게이션 */
+// 푸터 내비게이션 맵 랜더링!
 const navigationsEl = document.querySelector("footer .navigations");
-
-navigations.forEach(function (nav) {
+navigations.forEach((nav) => {
   const mapEl = document.createElement("div");
   mapEl.classList.add("map");
 
   let mapList = "";
-  nav.maps.forEach(function (map) {
-    mapList += /* HTML */ ` <li><a href="${map.url}">${map.name}</a></li> `;
+  nav.maps.forEach((map) => {
+    mapList += /* html */ `<li>
+      <a href="${map.url}">${map.name}</a>
+    </li>`;
   });
 
-  mapEl.innerHTML = /* HTML */ `
+  mapEl.innerHTML = /* html */ `
     <h3>
       <span class="text">${nav.title}</span>
+      <span class="icon">+</span>
     </h3>
     <ul>
       ${mapList}
@@ -234,7 +226,15 @@ navigations.forEach(function (nav) {
   navigationsEl.append(mapEl);
 });
 
-
 /* copyright */
 const thisYearEl = document.querySelector("footer .this-year");
 thisYearEl.textContent = new Date().getFullYear();
+
+// 푸터 내비게이션 맵 아코디언
+const mapEls = [...document.querySelectorAll("footer .navigations .map")];
+mapEls.forEach((el) => {
+  const h3El = el.querySelector("h3");
+  h3El.addEventListener("click", () => {
+    el.classList.toggle("active");
+  });
+});
