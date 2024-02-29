@@ -1,8 +1,13 @@
-![header](https://capsule-render.vercel.app/api?type=waving&color=4078c0&height=180&section=header&text=www.apple.com/ipad-10.2%20-%20Clone&fontSize=45&animation=fadeIn&fontAlignY=38&desc=FrontEnd16&descAlignY=55&descAlign=85)
+<div align="center">
 
+  ![header](https://capsule-render.vercel.app/api?type=waving&color=4078c0&height=180&section=header&text=www.apple.com/ipad-10.2%20-%20Clone&fontSize=45&animation=fadeIn&fontAlignY=38&desc=FrontEnd16&descAlignY=55&descAlign=85)
 
-<img src="https://raw.githubusercontent.com/yonghun16/apple-ipad-app/main/ipad.jpg" width=800px />
+  <img src="https://raw.githubusercontent.com/yonghun16/apple-ipad-app/main/ipad.jpg" width=800px />
 	
+</div>
+
+</br>
+
 <ul>
 	<li>
 		<a href="https://www.apple.com/ipad-10.2">원본 보러가기</a>( www.apple.com/ipad-10.2 )
@@ -14,7 +19,9 @@
 		Single-page
 	</li>
 </ul>
+
 </br>
+
 <h4>Powerd by</h4>
 <div>
 	<!-- HTML --><a href="https://html.spec.whatwg.org/"><img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white" /></a>
