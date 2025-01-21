@@ -1,6 +1,6 @@
 <div align="center">
 
-  ![header](https://capsule-render.vercel.app/api?type=waving&color=4078c0&height=180&section=header&text=www.apple.com/ipad-10.2%20-%20Clone&fontSize=45&animation=fadeIn&fontAlignY=38&desc=FrontEnd16&descAlignY=55&descAlign=85)
+  ![header](https://capsule-render.vercel.app/api?type=waving&color=4078c0&height=180&section=header&text=www.apple.com/ipad-10.2%20-%20Clone&fontSize=45&animation=fadeIn&fontAlignY=38&desc=yonghun16&descAlignY=55&descAlign=85)
 
   <img src="https://raw.githubusercontent.com/yonghun16/apple-ipad-app/main/ipad.jpg" width=800px />
 	
